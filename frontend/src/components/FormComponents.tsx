@@ -32,11 +32,9 @@ const FormComponents = () => {
     <div className="flex flex-col mx-auto w-screen border border-black h-screen justify-center">
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="flex flex-col  mx-auto lg:w-1/3 md:w-1/2 border border-gray-900 max-sm:border-none p-8 rounded-md gap-4"
+        className="flex flex-col  mx-auto lg:w-1/3 md:w-1/2 border border-gray-900 max-sm:border-none p-8 rounded-md gap-4 text"
       >
-        <picture className="mx-auto">
-          <Image src="/logo.png" alt="logo" width={250} height={200} />
-        </picture>
+        <h1 className="text-3xl font-bold text-center">Register User</h1>
         <div className="w-full border border-gray-900"></div>
         <div className="flex flex-col gap-4">
           <label htmlFor="name">Name: </label>
