@@ -1,6 +1,9 @@
 const express = require('express')
-import usersRouter from './routes/usersRoutes'
+const { PrismaClient } = require('@prisma/client')
+const usersRouter = require('./routes/usersRoutes');
 
+
+const prisma = new PrismaClient()
 const app = express()
 
 //JSON
@@ -14,6 +17,7 @@ app.use((req, res, next) => {
   next()
 })
 
+//ROUTES
 app.use(usersRouter)
 
 const PORT = process.env.PORT || 4000
