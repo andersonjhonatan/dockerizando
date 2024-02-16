@@ -1,8 +1,7 @@
+import { axiosInstance } from '@/axios'
 import { INewUser } from '@/interface/INewUser'
-import axios from 'axios'
 import Image from 'next/image'
 import Link from 'next/link'
-import React, { useState } from 'react'
 import { useForm, SubmitHandler } from 'react-hook-form'
 import { toast } from 'react-hot-toast'
 
@@ -20,9 +19,8 @@ const FormComponents = () => {
   })
 
   const onSubmit: SubmitHandler<INewUser> = async (data) => {
-    const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000'
     try {
-      await axios.post(`${apiUrl}/users`, data)
+      await axiosInstance.post('/users', data)
       reset()
       toast.success('User created successfully!')
     } catch (error) {
@@ -60,7 +58,9 @@ const FormComponents = () => {
           <button type="submit" className="bg-yellow-500 py-3 px-4 rounded w-full mt-2">
             Submit
           </button>
-          <Link href={'/users'} className="text-blue-500 text-sm flex w-full justify-end">Click here to see all users</Link>
+          <Link href={'/users'} className="text-blue-500 text-sm flex w-full justify-end">
+            Click here to see all users
+          </Link>
         </div>
       </form>
     </div>
