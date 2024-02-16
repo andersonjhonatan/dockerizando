@@ -10,11 +10,7 @@ const UsersCards = () => {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const response = await axios.get(`${apiUrl}/users`, {
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        })
+        const response = await axios.get(`${apiUrl}/users`)
         setUser(response.data)
       } catch (error) {
         console.log('Error:', error)
