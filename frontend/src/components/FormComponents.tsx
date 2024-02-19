@@ -1,6 +1,5 @@
 import { axiosInstance } from '@/axios'
 import { INewUser } from '@/interface/INewUser'
-import Image from 'next/image'
 import Link from 'next/link'
 import { useForm, SubmitHandler } from 'react-hook-form'
 import { toast } from 'react-hot-toast'
